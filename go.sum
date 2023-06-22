@@ -1,0 +1,4 @@
+github.com/google/pprof v0.0.0-20230602150820-91b7bce49751 h1:hR7/MlvK23p6+lIw9SN1TigNLn9ZnF3W4SYRKq2gAHs=
+github.com/google/pprof v0.0.0-20230602150820-91b7bce49751/go.mod h1:Jh3hGz2jkYak8qXPD19ryItVnUgpgeqzdkY/D0EaeuA=
+github.com/orisano/nopieprofile v0.0.0-20230614084555-75e0c499249c h1:pmLqQp3r1uBKzqSk8V/rVaRp5zG7OUhNNJmZqjsvd4I=
+github.com/orisano/nopieprofile v0.0.0-20230614084555-75e0c499249c/go.mod h1:VWcPqi9IoGnUpPR1xNwAvhUs0r6zZx2S//g2l5znA/M=
