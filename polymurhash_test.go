@@ -2,8 +2,6 @@ package polymurhash
 
 import (
 	"testing"
-
-	"github.com/orisano/nopieprofile/nopieprofiletest"
 )
 
 func TestParam_Hash(t *testing.T) {
@@ -149,17 +147,3 @@ func TestParam_Hash(t *testing.T) {
 	}
 }
 
-func TestMain(m *testing.M) {
-	nopieprofiletest.Main(m)
-}
-
-func BenchmarkParam_Hash(b *testing.B) {
-	h := From(0xfedbca9876543210)
-	tweak := uint64(0xabcdef0123456789)
-	in := []byte("oo70ed77jci4bgodhnyf37axrx4f8gf8qs94f4l9xi9h0jkdl2ozoi2p7q7qu1945l21dzj6rhvqearzrmblfo3ljjldj0m9fue")
-	var out uint64
-	for i := 0; i < b.N; i++ {
-		out = h.Hash(in, tweak)
-	}
-	_ = out
-}
