@@ -34,7 +34,7 @@ const (
 	arbitrary1 = 0x6a09e667f3bcc908 // Completely arbitrary, these
 	arbitrary2 = 0xbb67ae8584caa73b // are taken from SHA-2, and
 	arbitrary3 = 0x3c6ef372fe94f82b // are the fractional bits of
-	arbitrary4 = 0xa54ff53a5f1d36f1
+	arbitrary4 = 0xa54ff53a5f1d36f1 // sqrt(p), p = 2, 3, 5, 7.
 )
 
 func mix(x uint64) uint64 {
