@@ -49,6 +49,9 @@ func mix(x uint64) uint64 {
 func leUint64(b []byte) uint64 {
 	l := uint64(len(b))
 	if l < 4 {
+		if l == 0 {
+			return 0
+		}
 		v := uint64(b[0])
 		v |= uint64(b[l/2]) << (8 * (l / 2))
 		v |= uint64(b[l-1]) << (8 * (l - 1))
@@ -120,9 +123,6 @@ func From(seed uint64) Param {
 func (p Param) HashPoly611(b []byte, tweak uint64) uint64 {
 	polyAcc := tweak
 	if len(b) <= 7 {
-		if len(b) == 0 {
-			return 0
-		}
 		m0 := leUint64(b)
 		return polyAcc + red611(mul128(p.k+m0, p.k2+uint64(len(b))))
 	}
@@ -179,9 +179,6 @@ func (p Param) HashPoly611(b []byte, tweak uint64) uint64 {
 }
 
 func (p Param) Hash(b []byte, tweak uint64) uint64 {
-	if len(b) == 0 {
-		return 0
-	}
 	h := p.HashPoly611(b, tweak)
 	return mix(h) + p.s
 }
